@@ -12,19 +12,26 @@ import java.util.Scanner;
  * @author zahraurava
  */
 public class Maksimum {
-    public static void main(String[] args){
-        Scanner input = new Scanner(System.in);
-        System.out.println("Masukkan Angka:");
-        int angka = input.nextInt();
 
-        int array[] = {4, 6, 1, 3, angka};
-        
-        int maksimum = array[0];
-        for (int i = 0; i < array.length; i++) {
-            if(maksimum < array[i]){
+    public static void main(String[] args) {
+        int maksimum, jumlah, i, lokasi = 1, array[];
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan jumlah elemen: ");
+        jumlah = input.nextInt();
+        array = new int[jumlah];
+
+        System.out.println("Masukkan " + jumlah + " angka");
+        for (i = 0; i < jumlah; i++) {
+            System.out.print("Elemen ke-" + (i + 1) + ": ");
+            array[i] = input.nextInt();
+        }
+        maksimum = array[0];
+        for (i = 0; i < jumlah; i++) {
+            if (array[i] > maksimum) {
                 maksimum = array[i];
+                lokasi = i + 1;
             }
         }
-        System.out.println("Nilai Maksimum :" +maksimum);
+        System.out.println("Nilai makasimum adalah " + maksimum + " berada di elemen ke " + lokasi);
     }
 }

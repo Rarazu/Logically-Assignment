@@ -14,17 +14,23 @@ import java.util.Scanner;
 public class GanjilGenap2 {
 
     public static void main(String[] args) {
+        int maksimum, jumlah, i, lokasi = 1, array[];
         Scanner input = new Scanner(System.in);
-        System.out.println("Masukkan Angka:");
-        int angka = input.nextInt();
+        System.out.print("Masukkan jumlah elemen: ");
+        jumlah = input.nextInt();
+        array = new int[jumlah];
 
-        int array[] = {4, 6, 1, 3, angka};
+        System.out.println("Masukkan " + jumlah + " angka");
+        for (i = 0; i < jumlah; i++) {
+            System.out.print("Elemen ke-" + (i + 1) + ": ");
+            array[i] = input.nextInt();
+        }
         
-        for (int i = 0; i < array.length; i++) {
+        for (i = 0; i < jumlah; i++) {
             if (array[i] % 2 == 1) {
-                System.out.println("Ganjil");
+                System.out.println(array[i] + " = " + "Ganjil");
             } else if (array[i] % 2 == 0) {
-                System.out.println("Genap");
+                System.out.println(array[i] + " = " + "Genap");
             }
         }
     }
